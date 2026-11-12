@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>外刊译读 · 把好看的外文期刊文章，译成好读的中文</title>
+<meta name="description" content="把好看的外文期刊文章，译成好读的中文">
+<meta property="og:type" content="article"><meta property="og:site_name" content="外刊译读">
+<meta property="og:title" content="外刊译读 · 把好看的外文期刊文章，译成好读的中文"><meta property="og:description" content="把好看的外文期刊文章，译成好读的中文"><meta property="og:url" content="https://ruizhichang.github.io/reader/index.html">
+<style>
+:root{--bg:#f7f4ee;--card:#fffdf9;--ink:#1f1c18;--soft:#5d574e;--mute:#8f877b;--line:#e6dfd3;
+--accent:#9b3b2f;--quote:#f1ebe0;--shadow:0 1px 2px rgba(60,40,10,.05),0 8px 24px rgba(60,40,10,.06);
+--serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong",Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15130f;--card:#1d1a16;--ink:#ece6da;
+--soft:#bdb4a5;--mute:#8a8274;--line:#2f2a23;--accent:#e08a7c;--quote:#24201a;--shadow:none}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.read{max-width:700px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:5;
+backdrop-filter:saturate(1.4) blur(8px)}
+header.top .wrap,header.top .read{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.06em}
+.brand i{font-style:normal;color:var(--accent)}
+.nav-note{font-size:13px;color:var(--mute)}
+.hero{padding:56px 0 28px}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,6vw,52px);line-height:1.15;margin:0 0 12px;letter-spacing:.02em}
+.hero p{margin:0;color:var(--soft);font-size:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 8px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;
+color:var(--soft);cursor:pointer;font-family:inherit}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.08em;
+text-transform:uppercase;color:var(--j)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--j)}
+.feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;background:var(--card);border:1px solid var(--line);
+border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:20px 0 34px;transition:transform .2s}
+.feature:hover{transform:translateY(-2px)}
+.feature .cover{background:var(--j);color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:space-between;
+min-height:300px;position:relative;overflow:hidden}
+.feature .cover::after{content:"“";position:absolute;right:-10px;bottom:-90px;font-family:Georgia,serif;font-size:340px;
+line-height:1;opacity:.14}
+.feature .cover .kicker{font-size:13px;letter-spacing:.2em;opacity:.85}
+.feature .cover h2{font-family:var(--serif);font-size:clamp(26px,3.6vw,38px);line-height:1.3;margin:18px 0 0;position:relative;z-index:1}
+.feature .body{padding:32px 34px;display:flex;flex-direction:column;gap:14px}
+.en{font-family:Georgia,serif;font-style:italic;color:var(--soft);font-size:15px;line-height:1.5}
+.by{font-size:14px;color:var(--mute)}
+.excerpt{font-family:var(--serif);font-size:16px;line-height:1.85;color:var(--soft);margin:0}
+.more{margin-top:auto;font-weight:600;font-size:14px;color:var(--j)}
+.section-h{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);
+padding-bottom:8px;margin:8px 0 20px}
+.section-h h3{font-family:var(--serif);font-size:20px;margin:0}
+.section-h span{font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;
+flex-direction:column;gap:10px;box-shadow:var(--shadow);border-top:4px solid var(--j);transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.card h4{font-family:var(--serif);font-size:20px;line-height:1.45;margin:4px 0 0}
+.card .meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:auto;
+padding-top:12px;border-top:1px dashed var(--line)}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--mute);font-size:13px;line-height:1.8}
+/* article */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--j);width:0;z-index:10}
+.art-head{padding:44px 0 8px}
+.art-head h1{font-family:var(--serif);font-size:clamp(28px,5vw,40px);line-height:1.3;margin:14px 0 10px}
+.art-head .en{font-size:17px}
+.byline{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin:18px 0 0;padding:14px 0;
+border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+.abstract{background:var(--quote);border-radius:12px;padding:20px 22px;margin:28px 0 8px;font-family:var(--serif);
+font-size:16px;line-height:1.85;color:var(--soft)}
+.abstract strong{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--j);margin-bottom:6px}
+article.prose{font-family:var(--serif);font-size:18px;line-height:2;letter-spacing:.01em;padding:12px 0 20px}
+.prose p{margin:0 0 1.2em}
+.prose h2{font-size:23px;line-height:1.4;margin:2em 0 .8em;padding-left:12px;border-left:4px solid var(--j)}
+.prose h3{font-size:19px;margin:1.6em 0 .6em}
+.prose blockquote{margin:1.4em 0;padding:4px 0 4px 18px;border-left:3px solid var(--line);color:var(--soft)}
+.prose hr{border:0;text-align:center;margin:2em 0}.prose hr::after{content:"· · ·";color:var(--mute);letter-spacing:.6em}
+.prose a{color:var(--j);border-bottom:1px solid currentColor}
+.prose .qa .speaker{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;color:#fff;
+background:var(--j);border-radius:4px;padding:1px 6px;margin-right:10px;vertical-align:2px}
+.prose .num{padding-left:2em;position:relative}.prose .num span{position:absolute;left:0;color:var(--j);font-weight:700}
+.source{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:20px 0 40px;
+font-size:14px;color:var(--soft);line-height:1.9}
+.source a{color:var(--j)}
+.back{display:inline-block;margin:0 0 50px;font-size:14px;font-weight:600;color:var(--j)}
+@media (max-width:720px){.feature{grid-template-columns:1fr}.feature .cover{min-height:220px;padding:28px}
+.feature .body{padding:24px}.hero{padding:36px 0 16px}article.prose{font-size:17px;line-height:1.95}}
+</style></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="index.html">外刊译读<i>.</i></a>
+<span class="nav-note">已收录 2 篇 · 1 种期刊</span></div></header>
+<main class="wrap">
+<section class="hero"><h1>外刊译读</h1><p>把好看的外文期刊文章，译成好读的中文</p>
+<div class="chips" role="group" aria-label="按期刊筛选"><button class="chip" aria-pressed="true" data-f="*">全部</button><button class="chip" aria-pressed="false" data-f="think">Think</button></div></section>
+<a class="feature" href="a/0d52adf2d64b.html" data-j="think" style="--j:#7a4f8f" data-j-dark="#c7a0dc">
+  <div class="cover"><div class="kicker">最新译文 · Think</div><h2>安乐死</h2></div>
+  <div class="body"><div class="en">Euthanasia</div>
+  <div class="by">Christopher Belshaw · 第 25 卷 · 第 73 期</div>
+  <p class="excerpt">什么是安乐死（euthanasia）？说白了，就是为了某人自身的好处而杀死他。本文的目的，首先是把这一点讲清楚，其次是探讨这种杀死与拟议中的协助死亡（assisted dying）方案所设想的杀死之间有何关系。两者之间存在一些重要的差别。</p>
+  <div class="more">阅读全文（约 10 分钟）→</div></div></a>
+<div class="section-h"><h3>往期文章</h3><span>按刊出时间排序</span></div>
+<div class="grid"><a class="card" href="a/5eb32d817a31.html" data-j="think" style="--j:#7a4f8f" data-j-dark="#c7a0dc">
+  <span class="tag">Think</span><h4>《Think》访谈：什么是平等（equality）？它为何重要？</h4>
+  <div class="en">Think Interview: What Is Equality and Why Does It Matter?</div>
+  <p class="excerpt">这是一篇对伊丽莎白·安德森（Elizabeth Anderson）的访谈，主题是她1999年发表于《伦理学》（Ethics）期刊的经典论文《平等的意义何在？</p>
+  <div class="meta"><span>Elizabeth Anderson, Stephen Law</span><span>16 分钟</span></div></a></div>
+</main>
+<footer><div class="wrap">译文由 AI 生成，仅供阅读参考，请以原文为准。原文版权归作者及出版方所有，仅收录以 CC BY 等开放许可发布的文章。</div></footer>
+<script>
+// swap journal accents for dark mode
+if(matchMedia('(prefers-color-scheme: dark)').matches)document.querySelectorAll('[data-j-dark]').forEach(el=>el.style.setProperty('--j',el.dataset.jDark));
+</script>
+<script>
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+  const f=c.dataset.f;
+  document.querySelectorAll('[data-j]').forEach(el=>el.style.display=(f==='*'||el.dataset.j===f)?'':'none');
+});
+</script></body></html>
