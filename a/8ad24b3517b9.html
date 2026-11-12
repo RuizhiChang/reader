@@ -81,6 +81,12 @@ article.prose{font-family:var(--serif);font-size:18px;line-height:2;letter-spaci
 background:var(--j);border-radius:4px;padding:1px 6px;margin-right:10px;vertical-align:2px}
 .prose .num{padding-left:2em;position:relative}.prose .num span{position:absolute;left:0;color:var(--j);font-weight:700}
 .prose.fiction p{text-indent:2em;margin:0 0 .6em}
+.nav-home{font-size:14px;font-weight:600;color:var(--ink);border:1px solid var(--line);background:var(--card);
+border-radius:999px;padding:5px 14px}
+.fab{position:fixed;right:18px;bottom:22px;z-index:9;display:flex;align-items:center;gap:6px;background:var(--ink);
+color:var(--bg);border-radius:999px;padding:11px 18px;font-size:15px;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.18);
+transition:opacity .25s,transform .25s}
+.fab.hide{opacity:0;transform:translateY(12px);pointer-events:none}
 .source{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:20px 0 40px;
 font-size:14px;color:var(--soft);line-height:1.9}
 .source a{color:var(--j)}
@@ -90,7 +96,8 @@ font-size:14px;color:var(--soft);line-height:1.9}
 </style></head>
 <body><div class="progress" style="--j:#7a4f8f" data-j-dark="#c7a0dc"></div>
 <header class="top"><div class="read"><a class="brand" href="../index.html">外刊译读<i>.</i></a>
-<span class="nav-note">Think</span></div></header>
+<a class="nav-home" href="../index.html">☰ 全部文章</a></div></header>
+<a class="fab" href="../index.html" aria-label="返回目录">☰<span>目录</span></a>
 <main class="read" style="--j:#7a4f8f" data-j-dark="#c7a0dc">
 <div class="art-head"><span class="tag">Think · 第 25 卷 · 第 73 期</span>
 <h1>物理无穷的不存在及其意涵</h1><div class="en">The Non-existence of Physical Infinities and Its Implications</div>
@@ -144,5 +151,8 @@ if(matchMedia('(prefers-color-scheme: dark)').matches)document.querySelectorAll(
 </script>
 <script>
 const bar=document.querySelector('.progress');
-addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+const fab=document.querySelector('.fab');let lastY=0;
+addEventListener('scroll',()=>{const h=document.documentElement,y=h.scrollTop;
+bar.style.width=(y/(h.scrollHeight-h.clientHeight)*100)+'%';
+fab.classList.toggle('hide',y>lastY&&y>200&&y<h.scrollHeight-h.clientHeight-80);lastY=y},{passive:true});
 </script></body></html>
